@@ -1,0 +1,522 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* -------------------------------------------------------------- 
+ 
+  	Modified:
+    * m.rangel (2013-11-21)
+	Responsive Design CSS Media Queries
+  
+-------------------------------------------------------------- */
+
+@media screen and (max-width: 1800px) {
+	
+	#xyzImage { 
+
+   background-size:auto auto; 
+   	background-position:top right;
+
+   
+}
+
+
+#subpageImageCover
+{	
+	background-size: auto;
+
+}
+}
+
+
+@media screen and (max-width: 1650px) {
+	
+	#advisorImage {
+    
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 410px;
+    overflow: hidden;
+	background-size: auto auto;
+}
+}
+
+@media screen and (max-width: 1217px) {
+	
+	#compliance {
+    float: right;
+    padding-bottom: 10px;
+	position:inherit;
+    top: 0px;
+    width: 95%;
+}
+	
+	#subPage {
+    padding-left: 3%;
+    padding-top: 30px;
+    width: 97%;
+}
+
+.subPageHeader {
+
+    width: 80%;
+}
+	
+	#subPageCover
+	
+	{
+	width:100%;	
+	}
+	
+	#subPageLeft
+{
+	width:55%;
+	font-weight:300;
+	border-right:thin solid #eeeeee;
+	float:left;
+	padding-right:2%;
+}
+
+
+#subPageRight
+{
+	width:40%;
+	float:right;
+	
+}
+	
+	#headerWrap {
+
+    height: auto;
+    overflow: hidden;
+}
+
+#header {
+    
+    width: 100%;
+}
+	
+	#report-form {
+    width: 10%;
+}
+
+#stickyImage {
+    display: none;
+
+}
+
+#reportSticky {
+    padding: 0 2%;
+    width: 96%;
+}
+	
+	#footer {
+    width: 100%;
+}
+	
+	#footer {
+    color: #E3E3E3;
+    margin: 40px auto auto;
+    width: 100%;
+}
+	
+	#specialties {
+    margin: 30px auto auto;
+    overflow: auto;
+    padding-left: 3%;
+    width: 97%;
+}
+
+#specialtyBox {
+    float: left;
+    height: 350px;
+    line-height: 30px;
+    margin-bottom: 30px;
+    margin-right: 5%;
+    width: 28%;
+}
+	.seenonText {
+    padding-top: 40px;
+}
+	
+	
+	#asSeenOnCover {
+    background-color: #FFFFFF;
+    height: auto;
+    overflow: auto;
+    width: 100%;
+}
+
+#seenOn {
+    height: auto;
+    padding-left: 0;
+    width: 95%;
+}
+
+#seenOn img {
+    padding-right: 0px;
+    width: 20%;
+}
+	
+
+	
+#xyzImage {
+background-size: 115% auto;
+height: auto;
+overflow: auto;
+background-position: top center;
+}
+
+#xyz {
+    height: 669px;
+    margin: auto;
+    width: 90%;
+
+}
+
+#xyzStatement {
+ padding-top: 2%;
+    width: 75%;
+}
+
+#reportText {
+    float: left;
+    padding-left: 10px;
+    width: 65%;
+}
+
+#CTA {
+    padding-left: 0;
+    padding-top: 20px;
+    width: 98%;
+	overflow:hidden;
+}
+
+#CTAcover {
+    background-color: #674614;
+    background-image:none;
+    bottom: 0;
+    height: auto;
+    position: absolute;
+    width: 100%;
+	overflow: auto;
+}
+
+#copyDoodle {
+	display:none;
+}
+
+
+#report {
+    
+    left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    position: relative;
+    top: 0px;
+    width: 30%;
+}
+
+#report img {
+    width: 70%;
+}
+
+#CTAactualform {
+    float: none;
+    padding-left: 0;
+	
+}
+
+
+
+}
+
+@media screen and (max-width: 1085px) {
+	h1{font-size:48px; line-height:58px;}
+	#xyz {
+height: 580px;
+
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	
+	#logo
+{
+	margin-right:10px;
+}
+
+#nav li {
+    padding-right: 25px;
+}
+
+	
+	
+}
+
+
+@media screen and (max-width: 950px) {
+	
+	#xyzImage {background-size:120% auto;}
+	
+	#footer2{height:auto; padding-bottom:40px;}
+	
+#hide-report {
+	display:none;
+}
+	
+	#footerCover {
+    height: auto;
+    padding-bottom: 0px;
+}
+
+#footerElement {
+    float: left;
+    padding: 1% 5%;
+    width: 90%;
+}
+
+#advisorImage {
+display:none;
+}
+
+#advisorSmall
+{
+	display:block;
+	width:100%;
+	
+}
+
+#advisorSmall img {
+	width:100%;
+}
+
+#advisorTextSmall
+{
+
+	background-color:#dededd;
+	padding: 10%;
+    width: 80%;
+	text-align:center;
+	font-weight:300;	
+	font-size:16px;
+	line-height:30px;
+	color:#242424;
+	display:block;
+
+}
+	
+}
+
+@media screen and (max-width: 850px) {
+	#xyzImage {background-size:130% auto;}
+	h1{font-size:32px; line-height:42px;}
+	h2{font-size:18px; line-height:30px;}
+
+#xyz {
+height: 480px;
+}
+
+#subPageLeft
+{
+ padding-left: 2%;
+
+    width: 98%;
+	border-right:none;
+	float:none;
+	padding-right:0%;
+	padding-bottom:20px;
+}
+
+
+#subPageRight
+{
+ padding-left: 2%;
+    
+    width: 98%;
+	float:none;
+	
+}
+
+}
+
+@media screen and (max-width: 650px) {
+	
+	#xyz {
+height: 550px;
+}
+
+#xyzImage {
+background-position: top center;
+background-size:200% auto;
+}
+
+#xyzStatement {
+padding-top: 2%;
+width: 85%;
+margin:auto;
+text-align:center;
+}
+
+h1{font-size:30px; line-height:34px;}
+	
+#CTAactualform {
+  
+	text-align:center;
+}
+	
+	#offerSubPage
+{
+	width:96%;
+	padding:2%;
+	border-radius:5px;
+	 font-size: 14px;
+}
+
+#offerSubPageContact
+
+{
+	width:96%;
+	padding:2%;
+	border-radius:5px;
+	 font-size: 14px;
+}
+	
+	
+.subPageText
+{
+
+	width:85%;
+	 font-size: 16px;
+}
+
+
+.subPageHeader {
+    font-size: 35px;
+    width: 85%;
+}
+	
+	#nav {
+
+    padding-top: 0px;
+}
+	
+	#logo {
+	float:none; 
+    text-align: center;
+	 width: 100%;
+}
+
+
+	fieldset, fieldset.collapsible {
+	
+	display:block;
+        
+}
+	
+	#navWrap
+	
+	{
+	display:none;	
+	}
+	
+	#nav li {
+    border-bottom: thin solid #8C3838;
+    padding: 10px 0;
+    width: 95%;
+}
+
+.ctaformfill {
+
+    width: 90%;
+}
+
+input[type="submit"] {
+
+    width: 100%;
+	 border-radius: 6px;
+}
+
+.ctaformfill input {
+
+    border-radius: 6px;
+    width: 80%;
+}
+	
+	#report {
+  
+    width: 35%;
+}
+	
+	#reportText {
+ 
+    width: 55%;
+}
+	
+	#specialtyBox {
+
+    margin-right: 0;
+    height: auto;
+    min-height: 280px;
+    padding-left: 5%;
+    width: 90%;
+}
+
+	
+	#specialtyClick {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    position: relative;
+    width: 90%;
+}
+	
+	#advisorImage {
+display:none;
+}
+	
+	#seenOn img {
+    float: left;
+    padding-right: 0;
+    width: 50%;
+}
+
+
+	
+	.seenonText {
+    float: none;
+    padding-top: 50px;
+}
+
+#report img {
+    width: 90%;
+}
+	
+
+	
+	h2 {
+		display:none;
+	}
+	
+	#subPageLeft h2
+{
+	display:block;
+}
+}
+	
+@media screen and (max-width: 450px) {
+	
+	
+	#xyzImage {
+    background-position: 0 200px;
+ 
+}
+#report {
+    
+  display:none;
+}
+
+#reportText {
+    width: 90%;
+	text-align:center;
+}
+	
+}
