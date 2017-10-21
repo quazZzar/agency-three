@@ -26,8 +26,17 @@ function goodies_enqueue(){
 }
 add_action( 'wp_enqueue_scripts', 'goodies_enqueue' );
 
+function admin_side_scripts(){
+	wp_enqueue_script( 'admin-js', get_template_directory_uri().'/assets/js/admin-side.js', array( 'jquery' ), false, true );
+}
+
+add_action( 'admin_enqueue_scripts', 'admin_side_scripts' );
+
 function create_posttypes() {
  	add_image_size('archive_thumbnail', 700, 400, array('center', 'center'));
+ 	add_image_size( 'staff-single', 290, 300, array('top', 'center') );
+ 	add_image_size( 'single-service', 400, 300, array('center', 'center') );
+	add_image_size( 'press-single', 220, 220, array('center', 'center') );
  	
 	$labels = array(
 		'name'               => _x( 'Services', 'post type general name', 'agency-three' ),
@@ -53,7 +62,7 @@ function create_posttypes() {
 		'show_ui'            => true,
 		'show_in_menu'       => true,
 		'query_var'          => true,
-		'rewrite'            => array( 'slug' => 'services' ),
+		'rewrite'            => array( 'slug' => 'service' ),
 		'capability_type'    => 'post',
 		'has_archive'        => true,
 		'hierarchical'       => false,
@@ -67,13 +76,13 @@ function create_posttypes() {
 		'singular_name'      => _x( 'Staff', 'post type singular name', 'agency-three' ),
 		'menu_name'          => _x( 'Staff', 'admin menu', 'agency-three' ),
 		'name_admin_bar'     => _x( 'Staff', 'add new on admin bar', 'agency-three' ),
-		'add_new'            => _x( 'Add New', 'staff member', 'agency-three' ),
-		'add_new_item'       => __( 'Add New Staff', 'agency-three' ),
-		'new_item'           => __( 'New Staff', 'agency-three' ),
-		'edit_item'          => __( 'Edit Staff', 'agency-three' ),
-		'view_item'          => __( 'View Staff', 'agency-three' ),
+		'add_new'            => _x( 'Add New', 'staff', 'agency-three' ),
+		'add_new_item'       => __( 'Add New Staff Member', 'agency-three' ),
+		'new_item'           => __( 'New Staff Member', 'agency-three' ),
+		'edit_item'          => __( 'Edit Staff Member', 'agency-three' ),
+		'view_item'          => __( 'View Staff Member', 'agency-three' ),
 		'all_items'          => __( 'All Staff Members', 'agency-three' ),
-		'search_items'       => __( 'Search Staff Members', 'agency-three' ),
+		'search_items'       => __( 'Search Staff', 'agency-three' ),
 		'parent_item_colon'  => __( 'Parent Staff:', 'agency-three' ),
 		'not_found'          => __( 'No Staff found.', 'agency-three' ),
 		'not_found_in_trash' => __( 'No Staff found in Trash.', 'agency-three' )
@@ -88,25 +97,46 @@ function create_posttypes() {
 		'query_var'          => true,
 		'rewrite'            => array( 'slug' => 'staff' ),
 		'capability_type'    => 'post',
-		'has_archive'        => true,
+		'has_archive'        => false,
 		'hierarchical'       => false,
-		'menu_position'      => 101,
-		'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail' )
+		'menu_position'      => 100,
+		'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail'  )
 	);
 	register_post_type( 'staff', $args );
 
-	register_post_type( 'media',
-		array(
-			'labels' => array(
-				'name' => __( 'In The Media' ),
-				'singular_name' => __( 'In The Media' )
-			),
-			'public' => true,
-			'has_archive' => true,
-			'rewrite' => array('slug' => 'media'),
-			'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail'  )			
-		)		
+	$labels = array(
+		'name'               => _x( 'Press', 'post type general name', 'agency-three' ),
+		'singular_name'      => _x( 'Press', 'post type singular name', 'agency-three' ),
+		'menu_name'          => _x( 'Press', 'admin menu', 'agency-three' ),
+		'name_admin_bar'     => _x( 'Press', 'add new on admin bar', 'agency-three' ),
+		'add_new'            => _x( 'Add New', 'press', 'agency-three' ),
+		'add_new_item'       => __( 'Add New Media', 'agency-three' ),
+		'new_item'           => __( 'New Media', 'agency-three' ),
+		'edit_item'          => __( 'Edit Media', 'agency-three' ),
+		'view_item'          => __( 'View Media', 'agency-three' ),
+		'all_items'          => __( 'All Press', 'agency-three' ),
+		'search_items'       => __( 'Search Press', 'agency-three' ),
+		'parent_item_colon'  => __( 'Parent Press', 'agency-three' ),
+		'not_found'          => __( 'No Press found.', 'agency-three' ),
+		'not_found_in_trash' => __( 'No Press found in Trash.', 'agency-three' )
 	);
+	$args = array(
+		'labels'             => $labels,
+		'description'        => __( 'Description.', 'agency-three' ),
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'press' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => 100,
+		'supports' => array( 'title', 'editor', 'excerpt', 'custom-fields', 'thumbnail'  )
+	);
+	register_post_type( 'press', $args );
+
 	$labels = array(
 		'name'               => _x( 'Articles', 'post type general name', 'agency-three' ),
 		'singular_name'      => _x( 'Article', 'post type singular name', 'agency-three' ),
@@ -275,6 +305,29 @@ function reg_sideb(){
 				'after_title'    => '</h4>'
 			)
 		);
+
+		register_sidebar(
+			array(
+				'name'           => esc_html__('Staff Sidebar', 'agency-three'),
+				'id'             => 'staff-sidebar',
+				'description'    => esc_html__('Staff post Sidebar Area', 'agency-three'),
+				'before_widget'  => '<div class="widget %2$s">',
+				'after_widget'   => '</div>',
+				'before_title'   => '<h4 class="widget-title">',
+				'after_title'    => '</h4>'
+			)
+		);
+		register_sidebar(
+			array(
+				'name'           => esc_html__('Services Sidebar', 'agency-three'),
+				'id'             => 'services-sidebar',
+				'description'    => esc_html__('Services post Sidebar Area', 'agency-three'),
+				'before_widget'  => '<div class="widget %2$s">',
+				'after_widget'   => '</div>',
+				'before_title'   => '<h4 class="widget-title">',
+				'after_title'    => '</h4>'
+			)
+		);
 	}
 }
 add_action('widgets_init','reg_sideb');
@@ -290,11 +343,11 @@ function _eo($option){
 /* 					Excerpt filter 							   */
 /***********************************************************************************************/
 function at_excerpt_more( $more ) {
-	esc_html__(' ...', 'agency-four');
+	esc_html__(' ...', 'agency-three');
 }
 add_filter( 'excerpt_more', 'at_excerpt_more' );
 
 function custom_excerpt_length( $length ) {
-	return 30;
+	return 27;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );

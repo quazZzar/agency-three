@@ -80,44 +80,25 @@
 		</div>
 		<div class="row team-members">
 			<div class="col-md-offset-3 col-md-6">
-				<div class="peeps row">
-					<div class="folks col-md-6">
-						<img class="wp-post-image" src="http://three.demo.agency/wp-content/uploads/2017/09/Bussinessman4.jpg" />
-						<h3 class="#"><a href="/team/jim-kersey/">Mondo Montrie, CLU, ChFC</a></h3>
-						<a href="#"><span class="read-more">Retirement Planning Professional</span></a>
+				<?php $team_args = array(
+					'post_type' => 'staff',
+					'posts_per_page' => -1,
+					'post_status' => 'publish'
+				);
+				$team_query = new WP_Query($team_args);
+				if($team_query->have_posts()) : ?>
+					<div class="peeps row">
+						<?php while($team_query->have_posts()) : $team_query->the_post();
+						$staff_options = get_post_meta(get_the_ID(), '_staff_options', true); ?>
+							<div class="folks col-md-6">
+								<img class="wp-post-image" src="<?php the_post_thumbnail_url( 'staff-single' ); ?>" />
+								<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+								<span class="work_position read-more"><?php echo @$staff_options['staff_position'] ? @$staff_options['staff_position'] : ''; ?></span>
+							</div>
+						<?php endwhile;  ?>
 					</div>
-					<div class="folks col-md-6">
-						<img class="wp-post-image" src="http://three.demo.agency/wp-content/uploads/2017/09/Bussinesswomen1.jpg" />
-						<h3 class=""><a href="#">Carol-Anne Pinkle</a></h3>
-						<a href="#"><span class="read-more">Accounting Supervisor</span></a>
-					</div>
-				</div>
+				<?php endif; ?>
 
-				<div class="peeps row">
-					<div class="folks col-md-6" >
-						<img class="wp-post-image"  src="http://three.demo.agency/wp-content/uploads/2017/09/Bussinessman5.jpg" />
-						<h3 class=""><a href="#">Forest Berns</a></h3>
-						<a href="#"><span class="read-more">Staff Development</span></a>
-					</div>
-					<div class="folks col-md-6" >
-						<img class="wp-post-image" src="http://three.demo.agency/wp-content/uploads/2017/09/Bussinessman6.jpg" />
-						<h3 class=""><a href="#">Clayton Grey</a></h3>
-						<a href="#"><span class="read-more">Partner, RICP</span></a>
-					</div>
-				</div>
-
-				<div class="peeps row">
-					<div class="folks col-md-6">
-						<img class="wp-post-image" src="http://three.demo.agency/wp-content/uploads/2017/09/Bussinesswomen3.jpg" />
-						<h3 class=""><a href="#">Kim Matters</a></h3>
-						<a href="#"><span class="read-more">Financial Advisor</span></a>
-					</div>
-					<div class="folks col-md-6">
-						<img class="wp-post-image" src="http://three.demo.agency/wp-content/uploads/2017/09/Bussinesswomen2.jpg" />
-						<h3 class=""><a href="#">Susie Queue</a></h3>
-						<a href="#"><span class="read-more">Insurance Professional</span></a>
-					</div>
-				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 text-center">
