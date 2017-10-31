@@ -15,7 +15,7 @@
 			</div>		
 		</div>
 	</section>
-	<section class="index-secttion-two">
+	<section class="index-section-two" id="specialties">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center section2">

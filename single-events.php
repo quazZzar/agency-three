@@ -3,7 +3,7 @@
 		while(have_posts()) : the_post();  
 			$event_meta = get_post_meta(get_the_ID(), '_events_options', true); ?>
 			<div class="container-fluid no-padding">
-				<section class="single-page-header" <?php echo has_post_thumbnail(get_the_ID()) ?  ' style="background-image: url('.get_the_post_thumbnail_url( get_the_ID()).');" ' : ''; ?>>
+				<section class="single-page-header" <?php echo @$event_meta['event_image'] ?  ' style="background-image: url('.@$event_meta['event_image'].');" ' : ''; ?>>
 					<div class="container">
 						<div class="row">
 							<div class="col-md-6">
@@ -21,13 +21,13 @@
 			<div class="page-content">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-<?php echo is_active_sidebar( 'event-sidebar' ) ? '9' : '12'; ?>">
+						<div class="col-md-<?php echo is_active_sidebar( 'event-sidebar' ) ? '8' : '12'; ?>">
 							<section class="event_body">
 								<div class="row">
-									<?php if(@$event_meta['event_image']): ?>
+									<?php if(has_post_thumbnail()): ?>
 										<div class="col-md-3">
 											<div class="event_thumbnail">
-												<img src="<?php echo @$event_meta['event_image']; ?>">
+												<img src="<?php the_post_thumbnail_url(); ?>">
 											</div>
 										</div>
 									<?php endif; ?>

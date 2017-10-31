@@ -20,10 +20,7 @@ get_header(); ?>
 				<div class="col-md-<?php echo is_active_sidebar( 'about-page-sidebar' ) ? '8' : '12'; ?>">
 					<?php while(have_posts()) : the_post(); 
 						the_content(); 
-					endwhile;
-					if(is_active_sidebar( 'contact-form-sidebar' )):
-						dynamic_sidebar('contact-form-sidebar');
-					endif; ?>
+					endwhile;?>
 				</div>
 				<?php get_sidebar('about'); ?>
 			</div>

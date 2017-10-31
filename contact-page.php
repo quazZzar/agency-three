@@ -31,9 +31,11 @@ $page_meta = get_post_meta(get_the_ID(), '_page_metas', true); ?>
 					<?php while(have_posts()) : the_post();
 						the_content(); 
 					endwhile;
-					if(is_active_sidebar( 'contact-form-sidebar' )):
-						dynamic_sidebar('contact-form-sidebar');
-					endif; ?>
+					if(is_active_sidebar( 'contact-form-sidebar' )): ?>
+						<div class="sidebar-bellow-content">
+							<?php dynamic_sidebar('contact-form-sidebar'); ?>
+						</div>
+					<?php endif; ?>
 				</div>
 				<?php get_sidebar('contact'); ?>
 			</div>
