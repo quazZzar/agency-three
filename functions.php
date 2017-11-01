@@ -274,9 +274,9 @@ function reg_sideb(){
 		);
 		register_sidebar(
 			array(
-				'name'           => esc_html__('Contact Form Sidebar', 'agency-three'),
+				'name'           => esc_html__('Contact Form Bellow Content', 'agency-three'),
 				'id'             => 'contact-form-sidebar',
-				'description'    => esc_html__('Contact Form Sidebar Area', 'agency-three'),
+				'description'    => esc_html__('Contact Form bellow content area', 'agency-three'),
 				'before_widget'  => '<div class="widget %2$s">',
 				'after_widget'   => '</div>',
 				'before_title'   => '<h4 class="widget-title">',
