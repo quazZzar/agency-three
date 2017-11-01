@@ -707,6 +707,94 @@ h1.archive-title {
 }
 
 
+.top-margin{
+	margin-top: 35px;
+}
+
+
+.staff.type-staff{
+	margin: 30px 0;
+}
+
+.staff.type-staff .staff_email {
+	font-family: "Montserrat", sans-serif;
+}
+.staff.type-staff .staff_email span{
+	font-weight: bold;
+}
+
+.staff.type-staff .staff_content{
+	margin-top: 10px;
+}
+
+.staff.type-staff .staff_body{
+	margin-top: 50px;
+}
+
+.staff-members-template{
+	margin: 30px 0;
+}
+
+article.team-member{
+	background: #f7f7f7;
+	padding: 15px;
+}
+
+.staff_member_item{
+	margin-bottom: 30px;
+	font-family: "Montserrat";
+}
+
+article.team-member a img{
+	width: 100%;
+}
+
+article.team-member .staff_name {
+	font-weight: bold;
+	padding: 10px 0 5px;
+	font-size: 18px;
+	line-height: 18px;
+}
+
+article.team-member .staff_position {
+	font-size: 12px;
+	line-height: 20px;
+	font-weight: bold;
+	color: #444;
+	text-transform: uppercase;
+}
+
+article.team-member .staff_email a {
+	font-size: 16px;
+	color: #7e6f59;
+}
+
+article.team-member .staff_email i{
+	color: #337ab7;
+	font-weight: bold;
+	margin-right: 5px;
+	font-size: 20px;
+}
+
+.about_staff_btn a {
+	padding: 5px 20px;
+	background: #d58508;
+	color: #fff;
+	margin-top: 10px;
+	display: inline-block;
+	font-size: 14px;
+	text-transform: uppercase;
+	font-family: sans-serif;
+	font-weight: bold;
+	text-decoration: none;
+	transition: 200ms all ease-in-out;
+}
+
+.about_staff_btn a:hover {
+	background: #b97202;
+}
+
+
 @media(max-width: 992px){
 	#menu{
 		opacity: 0;
@@ -735,3 +823,40 @@ h1.archive-title {
 	}
 }
 
+@media screen and (min-width: 768px) {
+	article.team-member{
+		min-height: 290px;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	article.team-member{
+		min-height: 382px;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	article.team-member{
+		min-height: 451px;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+	article.team-member .staff_position {
+		font-size: 11px;
+		line-height: 14px;
+	}
+	article.team-member .staff_name {
+		font-size: 15px;
+		line-height: 15px;
+	}
+	article.team-member .staff_email a {
+		font-size: 14px;
+	}
+	article.team-member .staff_email i {
+		font-size: 14px;
+	}
+	.about_staff_btn a{
+		font-size:  10px;
+	}
+}

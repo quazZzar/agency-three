@@ -12,7 +12,7 @@ function goodies_enqueue(){
 	wp_enqueue_style( 'bootstrapcss',  get_template_directory_uri().'/assets/css/bootstrap.css', array(), false, 'all'  );
 	wp_enqueue_style( 'main-styles',  get_template_directory_uri().'/assets/css/style.css', array(), false, 'all'  );
 	wp_enqueue_style( 'postslayout', get_template_directory_uri().'/assets/css/post-layout.css', array(), false, 'all' );
-	//wp_enqueue_style( 'fontawesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array(), false, 'all' );
+	wp_enqueue_style( 'fontawesome', get_template_directory_uri().'/assets/css/font-awesome.min.css', array(), false, 'all' );
 	wp_enqueue_style( 'GFonts', 'https://fonts.googleapis.com/css?family=Karla:400,700|Source+Sans+Pro:300,400,700', array( ), false, 'all' );
 	
 	if(is_singular( 'events' )) {
@@ -34,7 +34,7 @@ add_action( 'admin_enqueue_scripts', 'admin_side_scripts' );
 
 function create_posttypes() {
  	add_image_size('archive_thumbnail', 700, 400, array('center', 'center'));
- 	add_image_size( 'staff-single', 290, 300, array('top', 'center') );
+ 	add_image_size( 'staff-single', 400, 400, array('top', 'center') );
  	add_image_size( 'single-service', 400, 300, array('center', 'center') );
 	add_image_size( 'press-single', 220, 220, array('center', 'center') );
  	
